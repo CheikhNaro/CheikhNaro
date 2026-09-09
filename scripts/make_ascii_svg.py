@@ -48,7 +48,7 @@ FRAME = "#30363d"
 TITLE_TEXT = "#7d8590"
 
 # Gris clair utilisé pour l'ASCII dans le post
-ASCII_COLOR = "#c9d1d9"
+ASCII_COLOR = "#39d353"
 
 CURSOR = "#c9d1d9"
 
