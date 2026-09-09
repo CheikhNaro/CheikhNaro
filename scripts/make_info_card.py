@@ -13,9 +13,17 @@ OUTPUT = Path("assets/info-card.svg")
 WIDTH = 520
 HEIGHT = 330
 
-BACKGROUND = "#f6f6f3"
-TEXT = "#111111"
-MUTED = "#666666"
+# Palette du post original
+BACKGROUND = "#161b22"
+BORDER = "#0e4429"
+
+TEXT = "#f0f6fc"
+MUTED = "#8b949e"
+
+GREEN_DARK = "#006d32"
+GREEN = "#26a641"
+GREEN_BRIGHT = "#39d353"
+GREEN_NEON = "#69f0a0"
 
 FONT = "monospace"
 
@@ -51,7 +59,7 @@ LINES = [
 
     ("empty", "", ""),
 
-    ("label", "Status", "Building..."),
+    ("status", "Status", "Building..."),
 ]
 
 
@@ -71,23 +79,33 @@ def create_svg():
 
         "",
 
-        f'<rect width="100%" height="100%" rx="16" fill="{BACKGROUND}"/>',
+        # ----------------------------------------------------
+        # Background
+        # ----------------------------------------------------
+
+        f'<rect width="100%" height="100%" rx="16" '
+        f'fill="{BACKGROUND}" '
+        f'stroke="{BORDER}" '
+        f'stroke-width="1"/>',
 
         "",
 
+        # ----------------------------------------------------
         # Header
+        # ----------------------------------------------------
+
         f'<text x="25" y="32"',
         f'      font-family="{FONT}"',
         f'      font-size="{TITLE_SIZE}px"',
         f'      font-weight="700"',
-        f'      fill="{TEXT}">',
+        f'      fill="{GREEN_BRIGHT}">',
         "cheikh@github",
         "</text>",
 
         "",
 
         f'<line x1="25" y1="48" x2="{WIDTH - 25}" y2="48"',
-        f'      stroke="{MUTED}" stroke-width="1"/>',
+        f'      stroke="{GREEN_DARK}" stroke-width="1"/>',
 
         "",
     ]
@@ -105,6 +123,14 @@ def create_svg():
 
         begin = visible_index * ANIMATION_DELAY
 
+        # Couleur du label
+        if kind == "status":
+            label_color = GREEN_BRIGHT
+            value_color = GREEN_NEON
+        else:
+            label_color = GREEN
+            value_color = TEXT
+
         parts.extend([
             f'<g id="{group_id}" opacity="0">',
 
@@ -118,18 +144,20 @@ def create_svg():
 
             "",
 
+            # Label
             f'  <text x="{LEFT_LABEL_X}" y="{y}"',
             f'        font-family="{FONT}"',
             f'        font-size="{TEXT_SIZE}px"',
             '        font-weight="700"',
-            f'        fill="{TEXT}">',
+            f'        fill="{label_color}">',
             f'    {escape(label)}',
             "  </text>",
 
+            # Valeur
             f'  <text x="{VALUE_X}" y="{y}"',
             f'        font-family="{FONT}"',
             f'        font-size="{TEXT_SIZE}px"',
-            f'        fill="{TEXT}">',
+            f'        fill="{value_color}">',
             f'    {escape(value)}',
             "  </text>",
 
