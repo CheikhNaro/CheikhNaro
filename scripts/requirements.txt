@@ -1,0 +1,8 @@
+requests==2.32.3
+beautifulsoup4==4.12.3
+
+# Portrait uniquement — utilisés localement
+pillow
+numpy
+opencv-python
+rembg
