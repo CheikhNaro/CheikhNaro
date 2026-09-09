@@ -1,214 +1,408 @@
 #!/usr/bin/env python3
 
 from pathlib import Path
-from html import escape
+from PIL import Image, ImageEnhance
+import html
 
-from PIL import Image, ImageOps
 
-
-# ============================================================
+# ------------------------------------------------------------
 # Configuration
-# ============================================================
+# ------------------------------------------------------------
 
-INPUT = Path("source-prepped.png")
+SRC = Path("source-prepped.png")
 OUTPUT = Path("assets/ascii.svg")
 
-# Nombre de caractères horizontalement.
-# Plus grand = plus détaillé mais SVG plus lourd.
-COLUMNS = 100
+COLS = 100
+ROWS = 53
 
-# Correction du ratio des caractères monospace.
-# Les caractères sont plus hauts que larges.
-ASPECT_RATIO = 0.50
+CELL_W = 8
+CELL_H = 15
 
-# Palette ASCII : du plus clair au plus sombre.
-CHARS = " .`:-=+*cs#%@"
+RAMP = " .`:-=+*cs#%@"
 
-# Apparence
-FONT_SIZE = 10
-LINE_HEIGHT = 12
+CONTRAST = 1.05
+BRIGHTNESS = 1.0
+GAMMA = 1.18
 
-# Couleur du portrait
-TEXT_COLOR = "#111111"
+WHITE_FLOOR = 0.80
 
-# Fond de la carte
-BACKGROUND = "#f6f6f3"
+PAD = 20
+TITLEBAR_H = 30
+STATUS_H = 30
 
+ART_W = COLS * CELL_W
+ART_H = ROWS * CELL_H
+
+CANVAS_W = ART_W + PAD * 2
+CANVAS_H = TITLEBAR_H + ART_H + STATUS_H + PAD
+
+
+# ------------------------------------------------------------
+# Palette du post original
+# ------------------------------------------------------------
+
+BACKGROUND = "#0d1117"
+BACKGROUND_TOP = "#111722"
+FRAME = "#30363d"
+
+TITLE_TEXT = "#7d8590"
+
+# Gris clair utilisé pour l'ASCII dans le post
+ASCII_COLOR = "#c9d1d9"
+
+CURSOR = "#c9d1d9"
+
+
+# ------------------------------------------------------------
 # Animation
-LINE_DELAY = 0.045
-LINE_DURATION = 0.35
+# ------------------------------------------------------------
+
+ROW_DURATION = 0.11
+STAGGER = 0.11
 
 
-# ============================================================
-# Image → ASCII
-# ============================================================
+# ------------------------------------------------------------
+# Conversion image → ASCII
+# ------------------------------------------------------------
 
-def image_to_ascii(image: Image.Image) -> list[str]:
-    """
-    Transforme une image grayscale en lignes ASCII.
-    """
+def generate_ascii_rows():
 
-    image = ImageOps.grayscale(image)
+    image = Image.open(SRC).convert("L")
 
-    width, height = image.size
+    image = ImageEnhance.Brightness(image).enhance(
+        BRIGHTNESS
+    )
 
-    # Les caractères monospace ne sont pas carrés.
-    # On corrige donc la hauteur.
-    new_height = max(
-        1,
-        int(height * COLUMNS / width * ASPECT_RATIO)
+    image = ImageEnhance.Contrast(image).enhance(
+        CONTRAST
     )
 
     image = image.resize(
-        (COLUMNS, new_height),
-        Image.Resampling.LANCZOS,
+        (COLS, ROWS),
+        Image.LANCZOS,
     )
 
-    pixels = list(image.getdata())
+    pixels = image.load()
 
-    lines = []
+    rows = []
 
-    for y in range(new_height):
-        line = []
+    for y in range(ROWS):
 
-        for x in range(COLUMNS):
-            value = pixels[y * COLUMNS + x]
+        chars = []
 
-            # 0 = noir → dernier caractère
-            # 255 = blanc → espace
-            index = int(
-                (255 - value)
-                / 255
-                * (len(CHARS) - 1)
+        for x in range(COLS):
+
+            luminance = pixels[x, y] / 255.0
+
+            # Gamma
+            luminance = pow(
+                luminance,
+                GAMMA,
             )
 
-            line.append(CHARS[index])
+            # Zones très claires = espace
+            if luminance >= WHITE_FLOOR:
+                chars.append(" ")
+                continue
 
-        # On supprime les espaces inutiles à droite.
-        lines.append("".join(line).rstrip())
+            index = int(
+                (1.0 - luminance)
+                * (len(RAMP) - 1)
+                + 0.5
+            )
 
-    return lines
+            index = max(
+                0,
+                min(
+                    len(RAMP) - 1,
+                    index,
+                ),
+            )
 
+            chars.append(
+                RAMP[index]
+            )
 
-# ============================================================
-# ASCII → SVG animé
-# ============================================================
-
-def create_svg(lines: list[str]) -> str:
-
-    width = COLUMNS * FONT_SIZE * 0.60
-    height = len(lines) * LINE_HEIGHT + 30
-
-    parts = [
-        '<?xml version="1.0" encoding="UTF-8"?>',
-        '<svg xmlns="http://www.w3.org/2000/svg"',
-        f'     viewBox="0 0 {width:.0f} {height:.0f}"',
-        f'     width="{width:.0f}"',
-        f'     height="{height:.0f}">',
-        "",
-        f'<rect width="100%" height="100%" rx="14" fill="{BACKGROUND}"/>',
-        "",
-        f'<g fill="{TEXT_COLOR}"',
-        '   font-family="monospace"',
-        f'   font-size="{FONT_SIZE}px"',
-        '   font-weight="600"',
-        '   xml:space="preserve">',
-        "",
-    ]
-
-    # Chaque ligne possède son propre clipPath.
-    for i, line in enumerate(lines):
-
-        y = 18 + i * LINE_HEIGHT
-
-        if not line:
-            continue
-
-        escaped = escape(line)
-
-        # Largeur approximative de la ligne
-        line_width = max(
-            FONT_SIZE * 0.60,
-            len(line) * FONT_SIZE * 0.60
+        rows.append(
+            "".join(chars)
         )
 
-        clip_id = f"line-{i}"
-
-        begin = i * LINE_DELAY
-        end = begin + LINE_DURATION
-
-        parts.extend([
-            f'  <clipPath id="{clip_id}">',
-            f'    <rect x="0" y="{y - FONT_SIZE}"',
-            f'          width="0" height="{LINE_HEIGHT + 4}">',
-            f'      <animate',
-            f'        attributeName="width"',
-            f'        from="0"',
-            f'        to="{line_width:.1f}"',
-            f'        begin="{begin:.3f}s"',
-            f'        dur="{LINE_DURATION:.3f}s"',
-            f'        fill="freeze"/>',
-            f'    </rect>',
-            f'  </clipPath>',
-            "",
-            f'  <text x="10" y="{y}"',
-            f'        clip-path="url(#{clip_id})">',
-            f'    {escaped}',
-            f'  </text>',
-            "",
-        ])
-
-    parts.extend([
-        "</g>",
-        "</svg>",
-    ])
-
-    return "\n".join(parts)
+    return rows
 
 
-# ============================================================
+# ------------------------------------------------------------
+# Création du SVG
+# ------------------------------------------------------------
+
+def create_svg(rows):
+
+    parts = []
+
+    parts.append(
+        '<?xml version="1.0" encoding="UTF-8"?>'
+    )
+
+    parts.append(
+        f'<svg xmlns="http://www.w3.org/2000/svg" '
+        f'width="{CANVAS_W}" '
+        f'height="{CANVAS_H}" '
+        f'viewBox="0 0 {CANVAS_W} {CANVAS_H}" '
+        f'font-family="ui-monospace, SFMono-Regular, '
+        f'Menlo, Consolas, monospace">'
+    )
+
+    # --------------------------------------------------------
+    # Gradient background
+    # --------------------------------------------------------
+
+    parts.append(
+        '<defs>'
+        f'<linearGradient id="bg" '
+        f'x1="0" y1="0" x2="0" y2="1">'
+        f'<stop offset="0" '
+        f'stop-color="{BACKGROUND_TOP}"/>'
+        f'<stop offset="1" '
+        f'stop-color="{BACKGROUND}"/>'
+        f'</linearGradient>'
+        '</defs>'
+    )
+
+    parts.append(
+        f'<rect '
+        f'width="{CANVAS_W}" '
+        f'height="{CANVAS_H}" '
+        f'rx="12" '
+        f'fill="url(#bg)"/>'
+    )
+
+    # --------------------------------------------------------
+    # Border
+    # --------------------------------------------------------
+
+    parts.append(
+        f'<rect '
+        f'x="0.5" '
+        f'y="0.5" '
+        f'width="{CANVAS_W - 1}" '
+        f'height="{CANVAS_H - 1}" '
+        f'rx="12" '
+        f'fill="none" '
+        f'stroke="{FRAME}" '
+        f'stroke-width="1"/>'
+    )
+
+    # --------------------------------------------------------
+    # Title bar
+    # --------------------------------------------------------
+
+    parts.append(
+        f'<line '
+        f'x1="0" '
+        f'y1="{TITLEBAR_H}" '
+        f'x2="{CANVAS_W}" '
+        f'y2="{TITLEBAR_H}" '
+        f'stroke="{FRAME}"/>'
+    )
+
+    # Terminal dots
+    dots = [
+        "#ff5f56",
+        "#ffbd2e",
+        "#27c93f",
+    ]
+
+    for i, color in enumerate(dots):
+
+        parts.append(
+            f'<circle '
+            f'cx="{PAD + i * 16}" '
+            f'cy="{TITLEBAR_H / 2}" '
+            f'r="5" '
+            f'fill="{color}"/>'
+        )
+
+    # Titre
+    parts.append(
+        f'<text '
+        f'x="{CANVAS_W / 2}" '
+        f'y="{TITLEBAR_H / 2 + 4}" '
+        f'fill="{TITLE_TEXT}" '
+        f'font-size="12" '
+        f'text-anchor="middle">'
+        f'cheikh@github: ~$ ./portrait.sh'
+        f'</text>'
+    )
+
+    # --------------------------------------------------------
+    # ASCII
+    # --------------------------------------------------------
+
+    art_top = (
+        TITLEBAR_H
+        + PAD * 0.35
+    )
+
+    font_size = CELL_H * 0.86
+
+    for row_index, line in enumerate(rows):
+
+        y = (
+            art_top
+            + row_index * CELL_H
+            + CELL_H * 0.74
+        )
+
+        row_y = (
+            art_top
+            + row_index * CELL_H
+        )
+
+        delay = (
+            row_index * STAGGER
+        )
+
+        safe_line = html.escape(
+            line
+        )
+
+        text = (
+            f'<text '
+            f'xml:space="preserve" '
+            f'x="{PAD}" '
+            f'y="{y:.1f}" '
+            f'fill="{ASCII_COLOR}" '
+            f'font-size="{font_size:.1f}" '
+            f'textLength="{ART_W}" '
+            f'lengthAdjust="spacing">'
+            f'{safe_line}'
+            f'</text>'
+        )
+
+        # Clip animation
+        parts.append(
+            f'<clipPath id="row-{row_index}">'
+            f'<rect '
+            f'x="{PAD}" '
+            f'y="{row_y:.1f}" '
+            f'height="{CELL_H}" '
+            f'width="0">'
+            f'<animate '
+            f'attributeName="width" '
+            f'from="0" '
+            f'to="{ART_W}" '
+            f'begin="{delay:.3f}s" '
+            f'dur="{ROW_DURATION:.2f}s" '
+            f'fill="freeze"/>'
+            f'</rect>'
+            f'</clipPath>'
+        )
+
+        parts.append(
+            f'<g clip-path="url(#row-{row_index})">'
+            f'{text}'
+            f'</g>'
+        )
+
+        # Curseur
+        parts.append(
+            f'<rect '
+            f'y="{row_y + 1:.1f}" '
+            f'width="{CELL_W}" '
+            f'height="{CELL_H - 2}" '
+            f'fill="{CURSOR}" '
+            f'opacity="0">'
+            f'<animate '
+            f'attributeName="x" '
+            f'from="{PAD}" '
+            f'to="{PAD + ART_W}" '
+            f'begin="{delay:.3f}s" '
+            f'dur="{ROW_DURATION:.2f}s" '
+            f'fill="freeze"/>'
+            f'<set '
+            f'attributeName="opacity" '
+            f'from="0" '
+            f'to="0.85" '
+            f'begin="{delay:.3f}s"/>'
+            f'<set '
+            f'attributeName="opacity" '
+            f'to="0" '
+            f'begin="{delay + ROW_DURATION:.3f}s"/>'
+            f'</rect>'
+        )
+
+    # --------------------------------------------------------
+    # Status bar
+    # --------------------------------------------------------
+
+    status_line_y = (
+        TITLEBAR_H
+        + ART_H
+        + PAD * 0.35
+    )
+
+    status_y = (
+        status_line_y + 19
+    )
+
+    parts.append(
+        f'<line '
+        f'x1="0" '
+        f'y1="{status_line_y:.1f}" '
+        f'x2="{CANVAS_W}" '
+        f'y2="{status_line_y:.1f}" '
+        f'stroke="{FRAME}"/>'
+    )
+
+    parts.append(
+        f'<text '
+        f'x="{PAD}" '
+        f'y="{status_y:.1f}" '
+        f'fill="{TITLE_TEXT}" '
+        f'font-size="13">'
+        f'cheikh@github:~$ '
+        f'<tspan fill="{ASCII_COLOR}">'
+        f'whoami'
+        f'</tspan>'
+        f'</text>'
+    )
+
+    parts.append(
+        "</svg>"
+    )
+
+    return "".join(parts)
+
+
+# ------------------------------------------------------------
 # Main
-# ============================================================
+# ------------------------------------------------------------
 
 def main():
 
-    if not INPUT.exists():
-        raise SystemExit(
-            f"Erreur : {INPUT} est introuvable."
-        )
+    print("→ Génération du portrait ASCII...")
+
+    rows = generate_ascii_rows()
+
+    svg = create_svg(rows)
 
     OUTPUT.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    print(f"→ Lecture : {INPUT}")
-
-    image = Image.open(INPUT)
-
-    print(
-        f"→ Image originale : "
-        f"{image.width} × {image.height}"
-    )
-
-    print("→ Conversion en ASCII...")
-
-    lines = image_to_ascii(image)
-
-    print(
-        f"→ {len(lines)} lignes × {COLUMNS} colonnes"
-    )
-
-    print("→ Génération du SVG animé...")
-
-    svg = create_svg(lines)
-
     OUTPUT.write_text(
         svg,
         encoding="utf-8",
     )
 
-    print(f"✓ SVG créé : {OUTPUT}")
+    print(
+        f"✓ Portrait créé : {OUTPUT}"
+    )
+
+    print(
+        f"  Dimensions : "
+        f"{CANVAS_W} × {CANVAS_H}"
+    )
 
 
 if __name__ == "__main__":
