@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 600 786"
+     viewBox="0 0 600 798"
      width="600"
-     height="786">
+     height="798">
 
 <rect width="100%" height="100%" rx="14" fill="#f6f6f3"/>
 
@@ -12,13 +12,103 @@
    font-weight="600"
    xml:space="preserve">
 
+  <clipPath id="line-4">
+    <rect x="0" y="56"
+          width="0" height="16">
+      <animate
+        attributeName="width"
+        from="0"
+        to="438.0"
+        begin="0.180s"
+        dur="0.350s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+  <text x="10" y="66"
+        clip-path="url(#line-4)">
+                                                              ....`````::::`.
+  </text>
+
+  <clipPath id="line-5">
+    <rect x="0" y="68"
+          width="0" height="16">
+      <animate
+        attributeName="width"
+        from="0"
+        to="450.0"
+        begin="0.225s"
+        dur="0.350s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+  <text x="10" y="78"
+        clip-path="url(#line-5)">
+                                                   ..````::::-----------===+=-`
+  </text>
+
+  <clipPath id="line-6">
+    <rect x="0" y="80"
+          width="0" height="16">
+      <animate
+        attributeName="width"
+        from="0"
+        to="462.0"
+        begin="0.270s"
+        dur="0.350s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+  <text x="10" y="90"
+        clip-path="url(#line-6)">
+                                          ..``:::----------==============+++===-`
+  </text>
+
+  <clipPath id="line-7">
+    <rect x="0" y="92"
+          width="0" height="16">
+      <animate
+        attributeName="width"
+        from="0"
+        to="474.0"
+        begin="0.315s"
+        dur="0.350s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+  <text x="10" y="102"
+        clip-path="url(#line-7)">
+                                 .`:--==++++++++=====------------===----=========-`
+  </text>
+
+  <clipPath id="line-8">
+    <rect x="0" y="104"
+          width="0" height="16">
+      <animate
+        attributeName="width"
+        from="0"
+        to="486.0"
+        begin="0.360s"
+        dur="0.350s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+  <text x="10" y="114"
+        clip-path="url(#line-8)">
+                             .:=+**cccccsssscccscccccc******************++==--=====-.
+  </text>
+
   <clipPath id="line-9">
     <rect x="0" y="116"
           width="0" height="16">
       <animate
         attributeName="width"
         from="0"
-        to="360.0"
+        to="492.0"
         begin="0.405s"
         dur="0.350s"
         fill="freeze"/>
@@ -27,7 +117,7 @@
 
   <text x="10" y="126"
         clip-path="url(#line-9)">
-                                                   ..``:::-:``..
+                           .=*cccssccsssssss#%%%%%%%%%%%%%%%%######sssccc**++==--===-.
   </text>
 
   <clipPath id="line-10">
@@ -36,16 +126,16 @@
       <animate
         attributeName="width"
         from="0"
-        to="408.0"
+        to="498.0"
         begin="0.450s"
         dur="0.350s"
         fill="freeze"/>
     </rect>
-  </clipPath>python scripts/make_ascii_svg.py
+  </clipPath>
 
   <text x="10" y="138"
         clip-path="url(#line-10)">
-                                          .``:---=++*cccc**++==----::`..
+                          :+*cssccccsssssss#%%%%%%%%%%%%%%#####%%%%%%%%%###ssc**+=====`
   </text>
 
   <clipPath id="line-11">
@@ -54,7 +144,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="438.0"
+        to="510.0"
         begin="0.495s"
         dur="0.350s"
         fill="freeze"/>
@@ -63,7 +153,7 @@
 
   <text x="10" y="150"
         clip-path="url(#line-11)">
-                                    .``::=======-=+*+=+*+=====++++=++++=--:`.
+                         -**sscccccsssssss%%%%%%%####ssssssssssssssss###%%%%%%#scc*++==-`
   </text>
 
   <clipPath id="line-12">
@@ -72,7 +162,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="456.0"
+        to="522.0"
         begin="0.540s"
         dur="0.350s"
         fill="freeze"/>
@@ -81,7 +171,7 @@
 
   <text x="10" y="162"
         clip-path="url(#line-12)">
-                               .`::--=++=-=+=-=++**ccscc*+==-==-----==+**+++=-`.
+                        :**ssccssssscsss#%%%%%%%%%#########ssssssssssssss###%%%%%%#cc*+++-.
   </text>
 
   <clipPath id="line-13">
@@ -90,7 +180,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="474.0"
+        to="528.0"
         begin="0.585s"
         dur="0.350s"
         fill="freeze"/>
@@ -99,7 +189,7 @@
 
   <text x="10" y="174"
         clip-path="url(#line-13)">
-                             `:--=+++==+++====--**+csscc+++=-:`:-+*s#%%%#sccc*+=-:.
+                       `++csccsssssccs##%%%%%%%#ssccsssssss#%%######ssssssss##%%%%%%#sc***+-
   </text>
 
   <clipPath id="line-14">
@@ -108,7 +198,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="486.0"
+        to="540.0"
         begin="0.630s"
         dur="0.350s"
         fill="freeze"/>
@@ -117,7 +207,7 @@
 
   <text x="10" y="186"
         clip-path="url(#line-14)">
-                          `:-==++==++*+-+*=-=====*c**cc**+=-=+*cs########ssscc**++=:.
+                       =+*cscssssccss#s%%%%%%#sc**++===-----==+ccs##%%%##sssss##%%%%%%%#sc**=`
   </text>
 
   <clipPath id="line-15">
@@ -126,7 +216,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="492.0"
+        to="558.0"
         begin="0.675s"
         dur="0.350s"
         fill="freeze"/>
@@ -135,7 +225,7 @@
 
   <text x="10" y="198"
         clip-path="url(#line-15)">
-                         `::---==**=++++====:-+--+*++c#################%%##ssccc**++-`
+                      :++cscsssscccsss#%##%#sccc*cccc**++===-::::---+*cs#%%%######%%%%%%%#sc**=:.
   </text>
 
   <clipPath id="line-16">
@@ -144,7 +234,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="498.0"
+        to="570.0"
         begin="0.720s"
         dur="0.350s"
         fill="freeze"/>
@@ -153,7 +243,7 @@
 
   <text x="10" y="210"
         clip-path="url(#line-16)">
-                       .::-------=+*c+-+==+====++=+*cccccccss####%%%%#####%%#ssc**+==-`
+                      =+*ssssssscc#sssc**c#sscc*+=+*ss#ssc*+++++========+*s#%%%####%%%%%%%#sscc*+=`
   </text>
 
   <clipPath id="line-17">
@@ -162,7 +252,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="498.0"
+        to="588.0"
         begin="0.765s"
         dur="0.350s"
         fill="freeze"/>
@@ -171,7 +261,7 @@
 
   <text x="10" y="222"
         clip-path="url(#line-17)">
-                      `--=+*+---=-=+=-=-==-=+==*c**cssssssc**+======+++*ccs##sssc**+=-:
+                     .++cssscccscsssss#cs#sssc*+++++*cssscc****++++**+++==+*cs#%%%##%%%%%%#sssssc**+-.
   </text>
 
   <clipPath id="line-18">
@@ -180,7 +270,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="504.0"
+        to="600.0"
         begin="0.810s"
         dur="0.350s"
         fill="freeze"/>
@@ -189,7 +279,7 @@
 
   <text x="10" y="234"
         clip-path="url(#line-18)">
-                     `-=*cssc*c*++*+=-=-===*cccsscccc****+++==----::::---=+ccss##sc*+=:.
+                     :++cccccccss#ssss#c#sss#sc*****ccc#*++*****cccsssssscc****c#%%%%%%%%%##ssssssc**+-.
   </text>
 
   <clipPath id="line-19">
@@ -198,7 +288,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="516.0"
+        to="600.0"
         begin="0.855s"
         dur="0.350s"
         fill="freeze"/>
@@ -207,7 +297,7 @@
 
   <text x="10" y="246"
         clip-path="url(#line-19)">
-                    .-=*cssssssccsc*===-=+cs#####ssc**+=-:::::-=+****+===---=++*csssc*=:`.
+                     -++cc*c*ccs#sscss#*scccs########c++c*+++-+*+*cssssssssssscccs%%%%%%%%##ssssssssc*+=
   </text>
 
   <clipPath id="line-20">
@@ -216,7 +306,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="528.0"
+        to="600.0"
         begin="0.900s"
         dur="0.350s"
         fill="freeze"/>
@@ -225,7 +315,7 @@
 
   <text x="10" y="258"
         clip-path="url(#line-20)">
-                    `-=+++***csccss*=++*csscc*+===-----=+*c###sc+=-::-=+*****+++=--======-:`
+                     -++cc***cs#sscs##sc+++++*cs####s*===+*+:`:+***cc*++==+**ccccc#%%%%%%#sssss#ss#sssc*
   </text>
 
   <clipPath id="line-21">
@@ -234,7 +324,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="540.0"
+        to="600.0"
         begin="0.945s"
         dur="0.350s"
         fill="freeze"/>
@@ -243,7 +333,7 @@
 
   <text x="10" y="270"
         clip-path="url(#line-21)">
-                    `--=--===***cc++*cs#%%%##s**+=-::::-==---::-+cs###s**+==+*cccccc**+=-----`
+                     =+=*c***ssssscssc**+===-===+++++++++++-```:+cssscc+++++*cccscs#%%%%%#ssss##ss##sssc
   </text>
 
   <clipPath id="line-22">
@@ -252,7 +342,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="546.0"
+        to="600.0"
         begin="0.990s"
         dur="0.350s"
         fill="freeze"/>
@@ -261,7 +351,7 @@
 
   <text x="10" y="282"
         clip-path="url(#line-22)">
-                    `:::`:-==+++**c#%%%%##sc*+++++*cs###sc**++*c*+-::`:=+ccssc****+*cssscc*+==`
+                     -++cc**cssscccsc*++====------==++++++=-:::-+*cc*+=***ccccssssc#@%%%#sssss##sssssscs
   </text>
 
   <clipPath id="line-23">
@@ -270,7 +360,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="546.0"
+        to="600.0"
         begin="1.035s"
         dur="0.350s"
         fill="freeze"/>
@@ -279,7 +369,7 @@
 
   <text x="10" y="294"
         clip-path="url(#line-23)">
-                   `--===+*cc**cssssc*+=-:`..   ..`::::`:-*s###sc*cccccc*=::``:=++****csccc*+--
+                     -++cc*cccccccssc*+++++++++++++++===++=----****====c#####sssc**cs%%#sssssss##sssssss
   </text>
 
   <clipPath id="line-24">
@@ -288,7 +378,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="552.0"
+        to="600.0"
         begin="1.080s"
         dur="0.350s"
         fill="freeze"/>
@@ -297,7 +387,7 @@
 
   <text x="10" y="306"
         clip-path="url(#line-24)">
-                  :=++++-=+cs#%%%%%%%%##sscc**ccssc*=---=++-:`..`-=+++++=+css##s*+=---+*cccc*+=.
+                     =++cc*cc*++++sscc***********=--========-=*cc+++=+*css###sssscs#s%#ssssssss##ssssssc
   </text>
 
   <clipPath id="line-25">
@@ -306,7 +396,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="552.0"
+        to="600.0"
         begin="1.125s"
         dur="0.350s"
         fill="freeze"/>
@@ -315,7 +405,7 @@
 
   <text x="10" y="318"
         clip-path="url(#line-25)">
-                 :=+ccc*+*c##%%%##sscc*++====+*cc*+*c##%%#ccccccssc*=:``:-====---+c####ssc***+=:
+                     =++cc*c**+===s#sccc##c*++=+*cc*+=-:::-=*cccc**+==+**ccccccccs%%##s#ssssss####sssscc
   </text>
 
   <clipPath id="line-26">
@@ -324,7 +414,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="552.0"
+        to="600.0"
         begin="1.170s"
         dur="0.350s"
         fill="freeze"/>
@@ -333,7 +423,7 @@
 
   <text x="10" y="330"
         clip-path="url(#line-26)">
-                 -+c##scccccc*+++=--::```..``::``.`:-=--::-+cssssc**c##%%#sc*+==+**++++*cssc*+=:
+                     -*+cccc*++==*##scc##sc*****c#c+=:::::=*c****c*++===+++*****cs##ss#sssssss###ssssscc
   </text>
 
   <clipPath id="line-27">
@@ -342,7 +432,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="552.0"
+        to="600.0"
         begin="1.215s"
         dur="0.350s"
         fill="freeze"/>
@@ -351,7 +441,7 @@
 
   <text x="10" y="342"
         clip-path="url(#line-27)">
-                 `-*csssc***ccs##ssc***++cssssccccs#sc+==+***=:`..`:=+++=--=c#%%%%sc*+++ccccc+=-
+                     :*+cc***++++*#%#ccs###ssssc+===-:::-+s#ssc**c**++====++**cccs#ss#sssssssss##ssss*++
   </text>
 
   <clipPath id="line-28">
@@ -360,7 +450,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="558.0"
+        to="600.0"
         begin="1.260s"
         dur="0.350s"
         fill="freeze"/>
@@ -369,7 +459,7 @@
 
   <text x="10" y="354"
         clip-path="url(#line-28)">
-                 .-+s###ss#####c*+--:::-+**+++*cc**+=*cssssc**ccccssc*+=---+++====+*s%%%#sc*+===`
+                     .++*c**+++++*####ssss#sc+=--------=c#%%%%#ssc*++++++++**cccs##s#ssssssssssssscc+++=
   </text>
 
   <clipPath id="line-29">
@@ -378,7 +468,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="558.0"
+        to="600.0"
         begin="1.305s"
         dur="0.350s"
         fill="freeze"/>
@@ -387,7 +477,7 @@
 
   <text x="10" y="366"
         clip-path="url(#line-29)">
-                  `-+*cc*++=-:`..    .`:``.`:::`...`:--:````:=+++==-=+css##sc***+=+****ccsssc*++-
+                     .+**s***++++*%%%%#sc*+=--:---:::-*s###%%%#sc****c***ccccccs#%###sssscccccccc**+====
   </text>
 
   <clipPath id="line-30">
@@ -396,7 +486,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="558.0"
+        to="600.0"
         begin="1.350s"
         dur="0.350s"
         fill="freeze"/>
@@ -405,7 +495,7 @@
 
   <text x="10" y="378"
         clip-path="url(#line-30)">
-                  `-+**+=-:::::::::::--::-==----=+**+=---====-:`.`:----:::`:-=*ss##sc*+++*cssc*=:
+                     -=***c*******c*++++===---::::::+s###sss#sssccccs##sssssssss%%###sc***++++++++=====+
   </text>
 
   <clipPath id="line-31">
@@ -414,7 +504,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="558.0"
+        to="600.0"
         begin="1.395s"
         dur="0.350s"
         fill="freeze"/>
@@ -423,7 +513,7 @@
 
   <text x="10" y="390"
         clip-path="url(#line-31)">
-                  .:=*cccc*cc**+++++++++***+++*ccc*++++*cc*+==++***+=-::`:::------=+*c####sc*++=:
+                    :==+******+++==-========-------=*c*ccccccccsssssss#%##ssssscc+++**++++++====+====-=+
   </text>
 
   <clipPath id="line-32">
@@ -432,7 +522,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="558.0"
+        to="600.0"
         begin="1.440s"
         dur="0.350s"
         fill="freeze"/>
@@ -441,7 +531,7 @@
 
   <text x="10" y="402"
         clip-path="url(#line-32)">
-                   .:*##ss##sscccss#s##%%####%%##sssssssc****ccc*+====+**c**+=-:::-=+*cssssc*+++:
+                    ==+******++++++++++++=====-----:::----===+====---==++*+=---:````:+++==============+*
   </text>
 
   <clipPath id="line-33">
@@ -450,7 +540,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="558.0"
+        to="600.0"
         begin="1.485s"
         dur="0.350s"
         fill="freeze"/>
@@ -459,7 +549,7 @@
 
   <text x="10" y="414"
         clip-path="url(#line-33)">
-                     `+#%%%#sscccsscccsssss####sss##%###s##%%%#sccccssssc*+===+**cc*+===+*csc*+=.
+    --:`.      .``:=****cc******+++====+++++++++++===----=======--------====-----====++===========-=+*c+
   </text>
 
   <clipPath id="line-34">
@@ -468,7 +558,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="552.0"
+        to="600.0"
         begin="1.530s"
         dur="0.350s"
         fill="freeze"/>
@@ -477,7 +567,7 @@
 
   <text x="10" y="426"
         clip-path="url(#line-34)">
-                       .+#sc****c**+*cc**csssccccsssscccs###sscccs#%%%#sssssss#ssc**++=+*ccc*+=:
+    ==+++=--=+**cccccccccccc*****++++++========+++++**++++===++++++====++**********+++++=======++++***-.
   </text>
 
   <clipPath id="line-35">
@@ -486,7 +576,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="546.0"
+        to="588.0"
         begin="1.575s"
         dur="0.350s"
         fill="freeze"/>
@@ -495,7 +585,7 @@
 
   <text x="10" y="438"
         clip-path="url(#line-35)">
-                       `+c*+++*****ccc*ccssc**ccssscccs#%%##ss##%%%%##ss###%%%%#sccccccsc*++==-
+    ****ccccccccccccccccccccc***cc*****++==---------==++*cccsscccccccccss##ssssc***+++===++++******+-.
   </text>
 
   <clipPath id="line-36">
@@ -504,7 +594,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="546.0"
+        to="570.0"
         begin="1.620s"
         dur="0.350s"
         fill="freeze"/>
@@ -513,7 +603,7 @@
 
   <text x="10" y="450"
         clip-path="url(#line-36)">
-                ...`:::=++*cs####%%@%%%##sccccccccc*ccs######%%@%%%####%%%%%%###s#####sc*++===`
+    ccccccccccccccccccccccccccccc**cccc**++===-----::::--=+*c#%###%%%%%%%%##sss*++++==++****+****=`
   </text>
 
   <clipPath id="line-37">
@@ -522,7 +612,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="546.0"
+        to="552.0"
         begin="1.665s"
         dur="0.350s"
         fill="freeze"/>
@@ -531,7 +621,7 @@
 
   <text x="10" y="462"
         clip-path="url(#line-37)">
-             .:-=+c**+=--=++**c#sccssc****cs##sc*****+==+*ccssssssss#%%@%%%##s##%%%%##ssc**+=-.
+    ***************cccccc********+++*ccc*****cc*++===------=+c%%%%%%%%%%%#sc*+=-====+++++***cc*`
   </text>
 
   <clipPath id="line-38">
@@ -540,7 +630,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="540.0"
+        to="552.0"
         begin="1.710s"
         dur="0.350s"
         fill="freeze"/>
@@ -549,7 +639,7 @@
 
   <text x="10" y="474"
         clip-path="url(#line-38)">
-           .:=+**ssc+==-:```::--::::-=+cs##%%%##sss###sc*====-==*csss#ssssss##%%%%%#####sc*+=-
+    +++*********************+++++===+++****cc#%##cc*++++==+*cs%%%%@@%%#c*+=----=====++*cccc+=--.
   </text>
 
   <clipPath id="line-39">
@@ -558,7 +648,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="540.0"
+        to="558.0"
         begin="1.755s"
         dur="0.350s"
         fill="freeze"/>
@@ -567,7 +657,7 @@
 
   <text x="10" y="486"
         clip-path="url(#line-39)">
-           `-=+*sscccsc+=::---===+=*s####ss#%%%#sscs###sc*============++*ccs#%%%########sc+==`
+    ++++++++++++===+++++++++++++====-====++++*cs###sssc**+*cs%%%#sc*+=--:::---==++**cc**+==---=-.
   </text>
 
   <clipPath id="line-40">
@@ -576,7 +666,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="534.0"
+        to="558.0"
         begin="1.800s"
         dur="0.350s"
         fill="freeze"/>
@@ -585,7 +675,7 @@
 
   <text x="10" y="498"
         clip-path="url(#line-40)">
-          .`:--=*+--=+**+++***ccsc*cc**++*css#%##sscs#%%##sccsssc****+=+*csssscs##%%%%%#c*+=:
+    +++++++++================++++===------=====++*ccss**ccccc*+=-----------==+**c**+============-
   </text>
 
   <clipPath id="line-41">
@@ -594,7 +684,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="528.0"
+        to="564.0"
         begin="1.845s"
         dur="0.350s"
         fill="freeze"/>
@@ -603,7 +693,7 @@
 
   <text x="10" y="510"
         clip-path="url(#line-41)">
-       .`:-==++cs*+**++css#%##s####%%##sss###sscccss######sss%@%%#ssscc*+====+*c#%%%%##sc*+-
+    ++++++++==========--=-=====++*+++=============++***ccccc=-====-====+++*****+=================:
   </text>
 
   <clipPath id="line-42">
@@ -612,7 +702,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="528.0"
+        to="570.0"
         begin="1.890s"
         dur="0.350s"
         fill="freeze"/>
@@ -621,7 +711,7 @@
 
   <text x="10" y="522"
         clip-path="url(#line-42)">
-    .`:-=---===cc*+*****++++****cccs###%%%%%%%%%%%%@%#sc**+++**+**csss###sc***ccssss##sc*+=.
+    ********++++++=+====+=======+*c****cc*+++===-=+******+******+++***cccc***sc*+=================:
   </text>
 
   <clipPath id="line-43">
@@ -630,7 +720,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="522.0"
+        to="576.0"
         begin="1.935s"
         dur="0.350s"
         fill="freeze"/>
@@ -639,7 +729,7 @@
 
   <text x="10" y="534"
         clip-path="url(#line-43)">
-    ====+*csc*+*+==++++==-::```````::-=+*ccccsscc**+++***+===*ss%@@@%%#####sscc***cs##c*=-.
+    ccc***ccc*****++++++***++******cccsssssc***++++++++++=+*csscccsssscccccc##sc*+========+=+++++++:
   </text>
 
   <clipPath id="line-44">
@@ -648,7 +738,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="510.0"
+        to="582.0"
         begin="1.980s"
         dur="0.350s"
         fill="freeze"/>
@@ -657,7 +747,7 @@
 
   <text x="10" y="546"
         clip-path="url(#line-44)">
-    c*+*s%%##sc*++******++--::::--==+*cssccc*++===+*ccsssc**+c%@%%%%%#scc**sscc***++*+=:.
+    sscccccccccc**********cccccccssss#sss#%#cc**ccc*****++++*cccc*ccsssssss##sssc+++++++++++++++++++`
   </text>
 
   <clipPath id="line-45">
@@ -666,7 +756,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="498.0"
+        to="582.0"
         begin="2.025s"
         dur="0.350s"
         fill="freeze"/>
@@ -675,7 +765,7 @@
 
   <text x="10" y="558"
         clip-path="url(#line-45)">
-    cc#%%#cc***cssccccc**+=-:::-==+*csssssssssss#%%%%##sc*+=-=*csssccc*cc*s#####s*+--:.
+    csscccccccccc****cccccssscccs#####sss##sss***ccccsscc********+++==*s##sssccccc*+++++++++++++++++-
   </text>
 
   <clipPath id="line-46">
@@ -684,7 +774,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="492.0"
+        to="582.0"
         begin="2.070s"
         dur="0.350s"
         fill="freeze"/>
@@ -693,7 +783,7 @@
 
   <text x="10" y="570"
         clip-path="url(#line-46)">
-    s%%%#sc**cs#sc*ccccc**+=--==+*cs#sssssss######ssssccc*++==**++*+=-==++*ssccc*+=-:.
+    *cccccccccccccccssscsssscscs#s###s#####s#sccccccsssc*cccsscc*++=-:::=ccccccccccccc***+++++++++++-
   </text>
 
   <clipPath id="line-47">
@@ -702,7 +792,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="600.0"
+        to="582.0"
         begin="2.115s"
         dur="0.350s"
         fill="freeze"/>
@@ -711,7 +801,7 @@
 
   <text x="10" y="582"
         clip-path="url(#line-47)">
-    #%%%##ss#%##sccccccccc**+++*css####ssssssssssssscccc*+=++=c#ss##cc*++++csc***+==-::::---===+++*****c
+    ccccccccss#ss#sssssssssccccccccccccsssss#ssccccsscc**++++*******++==*cccccc****************+++++.
   </text>
 
   <clipPath id="line-48">
@@ -720,7 +810,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="600.0"
+        to="576.0"
         begin="2.160s"
         dur="0.350s"
         fill="freeze"/>
@@ -729,7 +819,7 @@
 
   <text x="10" y="594"
         clip-path="url(#line-48)">
-    ##ssccc****+++++*ccsssssssss###########sssssssssssccc****+css#%%#sscc**c#ssccccccsssssssss##########
+    *********ccccssscccccccccccccccccccscsscssccccccccccccc*+======++++++*******++=++++++******++++`
   </text>
 
   <clipPath id="line-49">
@@ -738,7 +828,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="600.0"
+        to="582.0"
         begin="2.205s"
         dur="0.350s"
         fill="freeze"/>
@@ -747,7 +837,7 @@
 
   <text x="10" y="606"
         clip-path="url(#line-49)">
-    cc**+++===---::::-=+*css###############sssccccssscccc*cc+=+**#%%%#sc+=-=*scc**cs####################
+    ********************cccccccccccccccccccccccccccsscccccccc+++++=======++++****++++++*********+++:.
   </text>
 
   <clipPath id="line-50">
@@ -756,7 +846,7 @@
       <animate
         attributeName="width"
         from="0"
-        to="600.0"
+        to="594.0"
         begin="2.250s"
         dur="0.350s"
         fill="freeze"/>
@@ -765,7 +855,7 @@
 
   <text x="10" y="618"
         clip-path="url(#line-50)">
-    :``:::::::::::::::::--=+ccs###########ssscc***cssscc*+*+---=*s%%%%##sc****sscccs####################
+    ccc********cccccccccccccccccccccccccccccccccccccssssssccs*+++++++++++++++++++++++***************+=`
   </text>
 
   <clipPath id="line-51">
@@ -783,7 +873,7 @@
 
   <text x="10" y="630"
         clip-path="url(#line-51)">
-    ----------===++**c***+=----=++**ccccccccccc***s#%#sc*+=+==+*##%%%##sc*++c*+ccccs######%%%%%%%%%%%###
+    ssssssssssccccccccccccccccccccccccccccccccccccccccsssssss*****+++++++++++**++++******++**********+*+
   </text>
 
   <clipPath id="line-52">
@@ -801,7 +891,7 @@
 
   <text x="10" y="642"
         clip-path="url(#line-52)">
-    ============+++**ccss###scc**++=----==++++++++cs###sc*+**++*#%%%%%##s*+=+*++sss#############%%%%%%%%
+    ###sssssssssssccccccccccccscccccccssccccccccccccccscssssc***++**+++++++****+********+***********+++*
   </text>
 
   <clipPath id="line-53">
@@ -819,7 +909,7 @@
 
   <text x="10" y="654"
         clip-path="url(#line-53)">
-    ::::::-----:::::::::--==+++****++=======--::-=+c%%%###scs#s#%%%%%%%#c*+--=++cccs####%%%###sssss##%%%
+    #######ss#ssssssssssssssssssssscssscssscccccccccccccccsc++++*++++++++++++++++******************+++**
   </text>
 
   <clipPath id="line-54">
@@ -837,7 +927,7 @@
 
   <text x="10" y="666"
         clip-path="url(#line-54)">
-    :---------:::::::::::---==++**+++==-----:::::-+c###ssscc*cs#%%%%%%##sc+=++*****ss####%%%%%##ssccccss
+    ###s#####sssssssss#ssssssssssssssssscsscccccccccccccccc*+++++++++++++++++++++*************ccc**++***
   </text>
 
   <clipPath id="line-55">
@@ -855,7 +945,7 @@
 
   <text x="10" y="678"
         clip-path="url(#line-55)">
-    --======------------====++++====---------::::-=*sscccc**+==+s%#####sc**cccs#sccss######%%%%%##sssscc
+    ##sssssssssssssssssssssssssssssssssssccsscccccccccccc**+++++++++++++++++++++++*****************++***
   </text>
 
   <clipPath id="line-56">
@@ -873,7 +963,7 @@
 
   <text x="10" y="690"
         clip-path="url(#line-56)">
-    ==========---------------======-::::-----::::-+c###ssc*==---+ccs#%#sccssc*c####sssssss###%%%%##sssss
+    ssssssssssccssccsscccscccccccccccccccccccsccccscccccc*+++++++++++++++++++++********************++*cc
   </text>
 
   <clipPath id="line-57">
@@ -891,7 +981,7 @@
 
   <text x="10" y="702"
         clip-path="url(#line-57)">
-    ========----------==++*cccscc*=----=+****++==+*c###ssc*=----+cs#%##ss#scc*cs###sssssssss###%%%###sss
+    ***********cccc*c*c**********************ccccsscccccccc**+*++++++*++++++++++*****************+++*ccc
   </text>
 
   <clipPath id="line-58">
@@ -909,7 +999,7 @@
 
   <text x="10" y="714"
         clip-path="url(#line-58)">
-    ==============++**css#####ssssssss####sc*+=--=+c####ssc*++++*cs##scsscc***css#ssssssssssss#######sss
+    +++++++++++++++++****+****************+*+****ccccccccccccccccc***++++++++********++***************cc
   </text>
 
   <clipPath id="line-59">
@@ -927,7 +1017,7 @@
 
   <text x="10" y="726"
         clip-path="url(#line-59)">
-    *+++++++++***ccss####sc**++****++++++++=--:::=+c####sscc*++*cs##ssc*ccccc****cssssssssssssss#######s
+    +++++++++++++++++++++++++*++********++++++++**+***cccccccccccccccc*+++++++*******************++**cc*
   </text>
 
   <clipPath id="line-60">
@@ -945,7 +1035,7 @@
 
   <text x="10" y="738"
         clip-path="url(#line-60)">
-    +++++++*****ccssscc*++++*ccc*+=--------:::::-=*s%##sc*+---+*cs##scc*ccsc****++*ccsssssssssssss#####s
+    +++++++++++++++++++++++++++++*****++++++++++++++++++**ccccccssccccc+++++++*++***************++*ccc**
   </text>
 
   <clipPath id="line-61">
@@ -963,7 +1053,7 @@
 
   <text x="10" y="750"
         clip-path="url(#line-61)">
-    ===++**ccccsssssc*+++*cccc*++======+++++=----=*s##sc*+---=+cs###sc**ccccsssc*+++*ssssssssccccsss##ss
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**ccccc**++++++++****+**********++++*ccc**
   </text>
 
   <clipPath id="line-62">
@@ -981,7 +1071,25 @@
 
   <text x="10" y="762"
         clip-path="url(#line-62)">
-    ==+***ccssssccc+===+*ccc**++==--========-::`:=*s#sc*=---=*cs##ssc***ccccsc*+=****csccccc****ccccssss
+    +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++***++++*+++++******************ccc***
+  </text>
+
+  <clipPath id="line-63">
+    <rect x="0" y="764"
+          width="0" height="16">
+      <animate
+        attributeName="width"
+        from="0"
+        to="600.0"
+        begin="2.835s"
+        dur="0.350s"
+        fill="freeze"/>
+    </rect>
+  </clipPath>
+
+  <text x="10" y="774"
+        clip-path="url(#line-63)">
+    =====+++++++++++++++++++++++++++++++++++++++++++++++++++++++++******++*++*+++****************cccc***
   </text>
 
 </g>
