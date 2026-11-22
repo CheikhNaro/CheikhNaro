@@ -5,8 +5,8 @@ Développeur web full stack
   
 # 💫 À propos
 </div>  
-💡 Passionné par le **web moderne**<br>
-🐧 Utilisateur de **Linux** (Fedora btw)<br>
+💡 Passionné par le **web moderne** <br>
+🐧 Utilisateur de **Linux** (Fedora btw) <br>
 🎯 Objectif : construire des projets utiles et propres
 
 <div align="center">
